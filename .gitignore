@@ -1,0 +1,82 @@
+# As Yeoman assumes the usage of Bower and Grunt, ignore the below:
+wp-content/themes/mb-starter/bower_components
+wp-content/themes/mb-starter/node_modules
+
+# Ignore automatically generated cruft
+*.log
+wp-content/themes/mb-starter/.sass-cache
+wp-content/themes/mb-starter/library/scss/.sass-cache
+
+# Ignore config
+local-config.php
+
+# Operating system files
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# Vagrant
+.vagrant
+
+# WordPress + popular plugin generated — adapted from:
+# https://github.com/github/gitignore/blob/master/WordPress.gitignore
+sitemap.xml
+sitemap.xml.gz
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/wp-cache-config.php
+wp-content/themes/mb-build/
+wp-content/themes/mb-starter/*.md
+wp-content/themes/mb-starter/mb-starter.sublime-project
+wp-content/themes/mb-starter/mb-starter.sublime-workspace
+
+.htaccess
+
+
+*.map
+
+wp-content/themes/mb-starter/library/css/style.css.map
+
+wp-content/themes/mb-starter/library/css/style.css
+
+wp-content/themes/mb-starter/library/css/login.css.map
+
+wp-content/themes/mb-starter/library/css/dashboard.css.map
+
+wp-content/plugins/mb_site_planning/mb_site_planning.php
+
+wp-content/plugins/mb_site_planning/readme.txt
+
+wp-content/plugins/mb_site_planning/scripts.js
+
+wp-content/plugins/mb_site_planning/style.css
+
+
+
+
+
+
+
+*.map
+
+*.map
+
+wp-content/themes/mb-starter/library/css/style.css
+
+wp-content/themes/mb-starter/library/css/style.css.map
+
+wp-content/themes/mb-starter/library/js/global.min.js
+
+wp-content/themes/mb-starter/library/css/dashboard.css
+
+
+wp-content/themes/mb-starter/library/css/style.css
+
+wp-content/themes/mb-starter/library/css/style.css.map

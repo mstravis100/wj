@@ -1,0 +1,328 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Login Stylesheet
+
+This stylesheet is loaded (if admin.php is setup in your
+functions file) on the login page. This way you can style
+the login page. It won't affect any other page, admin or front-end.
+
+For more info, check out the codex:
+http://codex.wordpress.org/Creating_Admin_Themes
+
+******************************************************************/
+/*********************
+TOOLS
+*********************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+UNITS
+*********************/
+/*********************
+BREAKPOINTS
+*********************/
+/*********************
+TYPOGRAPHY
+*********************/
+/*********************
+TRANISTION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CENTERING
+*********************/
+/*********************
+HIGHLIGHT
+*********************/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+.animated, .message {
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.animated.hinge, .hinge.message {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.animated-slow, #loginform {
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn, #loginform {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+.reveal, .message {
+  -webkit-animation-name: reveal;
+          animation-name: reveal;
+  -webkit-animation-delay: .75s;
+          animation-delay: .75s;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    -webkit-transform: translate3d(0, 75px, 0);
+            transform: translate3d(0, 75px, 0);
+    opacity: .01;
+    z-index: -1;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    -webkit-transform: translate3d(0, 75px, 0);
+            transform: translate3d(0, 75px, 0);
+    opacity: .01;
+    z-index: -1;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+    z-index: 1;
+  }
+}
+#login_error + #loginform {
+  -webkit-animation-delay: 0 !important;
+          animation-delay: 0 !important;
+  -webkit-animation-name: none !important;
+          animation-name: none !important;
+}
+
+body.login {
+  font-family: "Source Code Pro", Courier, Helvetica, sans-serif;
+}
+
+body {
+  background: -webkit-linear-gradient(left, #f2f2f2 0%, #fcfcfc 19%, #f2f2f2 40%, #fafafa 60%, #f2f2f2 100%);
+  background: linear-gradient(to right, #f2f2f2 0%, #fcfcfc 19%, #f2f2f2 40%, #fafafa 60%, #f2f2f2 100%);
+  background-size: 10000px 100%;
+  -webkit-animation: bg 25s linear infinite;
+          animation: bg 25s linear infinite;
+}
+
+@-webkit-keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 10000px;
+  }
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 10000px;
+  }
+}
+#loginform {
+  -webkit-animation-delay: 0.125s;
+          animation-delay: 0.125s;
+}
+
+/* the form box */
+#loginform {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+
+.login form {
+  margin-top: 20px;
+  margin-left: 0;
+  padding: 26px 24px 46px;
+  font-weight: 400;
+  overflow: hidden;
+  background: white;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+.login form:focus {
+  border: 1px solid #bfbfbf;
+  outline: none;
+}
+
+.login label {
+  color: rgba(119, 119, 119, 0.5);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.login form .forgetmenot label {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+  background: #fff;
+}
+
+.login .message {
+  border-left: 4px solid #211e1c;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+
+.login #login_error {
+  border-left: 4px solid #A11812;
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+
+a {
+  color: #565656;
+  -webkit-transition-property: border,background,color;
+          transition-property: border,background,color;
+  -webkit-transition-duration: .05s;
+          transition-duration: .05s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  outline: 0;
+}
+a:active, a:hover {
+  color: #565656;
+  text-decoration: none;
+}
+
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+  color: #565656;
+}
+
+/*
+This is the Wordpress logo in the admin area.
+You'll have to load your own images and mess
+with the width and height.
+*/
+.login h1 a {
+  background: url(../img/logo.svg) no-repeat top center;
+  /* make sure to replace this! */
+  width: 270px;
+  height: 36px;
+  text-indent: -9999px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  display: block;
+}
+
+form {
+  margin-left: 8px;
+  padding: 26px 24px 46px;
+  font-weight: normal;
+  background: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+body form .input {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+  width: 97%;
+  padding: 3px;
+  margin-top: 2px;
+  margin-right: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #E5E5E5;
+  background: #FBFBFB;
+  outline: none;
+  box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
+}
+
+.login #backtoblog a, .login #nav a {
+  color: #D3D3D3;
+  font-weight: 300;
+}
+
+#nav, #backtoblog {
+  text-align: center;
+}
+
+input[type=checkbox], input[type=radio] {
+  border: 1px solid #E5E5E5;
+}
+
+/*
+You'll have to override some of the default styles
+but since we're referencing the id, it should be easy.
+*/
+#wp-submit {
+  display: block;
+  vertical-align: top;
+  font-style: normal;
+  font-weight: 500;
+  font-size: .75em;
+  line-height: 25px;
+  margin: 0;
+  padding: 0 2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #565656;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  width: auto;
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+#wp-submit:hover {
+  background: #565656;
+  color: #fff;
+}
+
+/* login button*/

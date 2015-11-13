@@ -1,0 +1,256 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Login Stylesheet
+
+This stylesheet is loaded (if admin.php is setup in your
+functions file) on the login page. This way you can style
+the login page. It won't affect any other page, admin or front-end.
+
+For more info, check out the codex:
+http://codex.wordpress.org/Creating_Admin_Themes
+
+******************************************************************/
+@import 'mixins';
+// ANIMATIONS
+
+$duration: .5s;
+$duration-slow: 1s;
+
+.animated{
+	animation-fill-mode:both;
+	animation-duration: $duration;
+}// animated
+
+.animated.hinge {
+	animation-duration: $duration;
+}//animated.hinge
+
+.animated-slow {
+	animation-fill-mode:both;
+	animation-duration:$duration-slow;
+}// animated-slow
+
+
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+.fadeIn {
+	animation-name: fadeIn;
+	   // &:nth-of-type(3n + 1) {
+	   // 		animation-delay: 0.2s;
+	   // 		//animation-delay: (#{$i*0.05s});
+	   // }
+	   // &:nth-of-type(3n + 2) {
+	   // 		animation-delay: 0.3s;
+	   // 		//animation-delay: (#{$i*0.05s});
+	   // }
+	   // &:nth-of-type(3n + 3) {
+	   // 		animation-delay: 0.4s;
+	   // 		//animation-delay: (#{$i*0.05s});
+	   // }	// @for $i from 1 through 50 {
+	//    &:nth-of-type(#{$i}) {
+	//    		//animation-delay: (#{$i*0.025s});
+	//    		//animation-delay: (#{$i*0.05s});
+	//    }
+	// }
+
+}
+.reveal {
+	animation-name: reveal;
+	animation-delay: .75s;
+}
+@keyframes reveal {
+	  0%   {
+	  	transform: translate3d(0,75px,0);
+		opacity: .01;
+		z-index: -1;
+		}
+	  100% {
+	  	transform: translate3d(0, 0 ,0);
+		opacity: 1;
+		z-index: 1;
+		}
+}
+
+#login_error + #loginform {
+	animation-delay: 0!important;
+	animation-name: none !important;
+}
+
+
+body.login {
+	//background: $white;
+	font-family: $sans-serif;
+}
+$bgWidth: 10000px;
+body {
+  background: linear-gradient(to right,
+  	darken($white, 5%) 0%,
+  	darken($white, 1%) 19%,
+  	darken($white, 5%) 40%,
+  	darken($white, 2%) 60%,
+  	darken($white, 5%) 100%
+
+  	);
+  background-size: $bgWidth 100%;
+  animation: bg 25s linear infinite ;
+}
+
+@keyframes bg{
+  0%{
+    background-position-x: 0;
+  }
+
+  100%{
+    background-position-x: $bgWidth;
+  }
+}
+.message {
+	@extend .animated, .reveal;
+}
+#loginform {
+	@extend .animated-slow;
+	//@extend .hinge;
+	@extend .fadeIn;
+	animation-delay: 0.125s;
+
+	} /* the form box */
+#loginform {
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+.login form {
+	margin-top: 20px;
+	margin-left: 0;
+	padding: 26px 24px 46px;
+	font-weight: 400;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: none;
+	border: none;//1px solid #DEDEDE;
+	border-radius: 0;
+		&:focus {
+			border: 1px solid #bfbfbf;
+			outline: none;
+		}
+}
+.login label {
+	color: rgba(119, 119, 119, 0.5);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+.login form .forgetmenot label {
+	font-size: 10px;
+	line-height: 10px;
+}
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+	background: $white;
+}
+.login .message {
+	border-left: 4px solid $text-color;//#7ad03a;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+.login #login_error {
+	border-left: 4px solid #A11812;
+	background: #fff;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+a {
+color: $black;
+transition-property: border,background,color;
+transition-duration: .05s;
+transition-timing-function: ease-in-out;
+outline: 0;
+	&:active, &:hover {
+		color: $black;
+		text-decoration: none;
+	}
+}
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+	color: $black;
+}
+/*
+This is the Wordpress logo in the admin area.
+You'll have to load your own images and mess
+with the width and height.
+*/
+.login h1 a {
+	background: url(../img/logo.svg) no-repeat top center; /* make sure to replace this! */
+	width: 270px;
+	height: 36px;
+	text-indent: -9999px;
+	overflow: hidden;
+	padding-bottom: 15px;
+	display: block;
+}
+
+form {
+	margin-left: 8px;
+	padding: 26px 24px 46px;
+	font-weight: normal;
+	background: white;
+	border: 1px solid #E5E5E5;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+body form .input {
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,sans-serif;
+	font-weight: 200;
+	font-size: 24px;
+	width: 97%;
+	padding: 3px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-bottom: 16px;
+	border: 1px solid #E5E5E5;
+	background: #FBFBFB;
+	outline: none;
+	box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+}
+.login #backtoblog a, .login #nav a {
+	color: #D3D3D3;
+	font-weight: 300;
+}
+#nav, #backtoblog {
+	text-align: center;
+}
+input[type=checkbox], input[type=radio] {
+	border: 1px solid #E5E5E5;
+}
+/*
+You'll have to override some of the default styles
+but since we're referencing the id, it should be easy.
+*/
+#wp-submit {
+  display: block;
+  vertical-align: top;
+  font-style: normal;
+  font-weight: 500;
+  font-size: .75em;
+  line-height: 25px;
+  margin: 0;
+  padding: 0 2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+  background: $white;
+  border: 1px solid $gray;
+  width: 100%;
+  width: auto;
+  box-shadow: none;
+	border-radius: 0;
+
+	@include hovers;
+		&:hover {
+			background: $black;
+			color: $white;
+		}
+	} /* login button*/
+

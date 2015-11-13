@@ -1,0 +1,114 @@
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-family: $sans-serif;
+	text-rendering: optimizelegibility;
+	font-weight: 500;
+	margin: 0;
+	line-height: 1.6;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	font-family: $titles;
+	font-weight: 900;
+	font-style: normal;
+	font-size: 3.25em;
+	color: black;
+	line-height: 1;
+	margin: 0 0 0.5em 0;
+	text-transform: uppercase;
+	text-shadow: -3px 3px $mustard;
+	padding: 1em 20px 0 20px;
+	@include breakpoint($tablet){
+		margin: 2em 0 0.8em 0;
+		padding: 0 1em 0 1em;
+		font-size: 3em;
+		text-shadow: none;
+		line-height: 0.4;
+	}
+}
+
+/**** Yellow bar behind h1 ****/
+h1, .h1::after {
+	@include breakpoint($tablet){
+		display: inline-block;
+		position: relative;
+		height: 0.4em;
+		background-color: $mustard;
+		padding-left: 10px;
+		padding-right: 10px;
+		overflow: visible;
+	}
+}
+
+h2, .h2 {
+	font-family: $titles;
+	font-weight: 900;
+	font-size: 1.2em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: $cream;
+}
+
+h2, .h2::after {
+	display: inline-block;
+	position: relative;
+	background-color: black;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+h3, .h3 {
+	font-family: $titles;
+	font-weight: 900;
+	font-size: 5em;
+	line-height: 0.8;
+	text-transform: uppercase;
+	color: $cream;
+}
+
+h4, .h4 {
+	font-size: 0.85em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.mPS2id-highlight {
+	color: $cream;
+}
+
+.menu-item a.mPS2id-highlight{ color: $cream; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic;
+}
+
+.cream {
+	color: $cream;
+	font-weight: 500;
+	font-size: 0.8em;
+}

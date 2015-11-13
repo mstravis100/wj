@@ -1,0 +1,155 @@
+
+/*********************
+TOOLS
+*********************/
+
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+%image-replacement {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$mustard: #e5c64f;
+$dark-mustard: #dcba49;
+$cream: #fffdf2;
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #565656;
+$white:             #fff;
+$gray: #ccc;
+
+$text-color: #211e1c;
+$accent: #044e89;
+$red: red;
+$blue: blue;
+
+
+$bones-pink:        #f01d4f;
+$bones-blue:        #1990db;
+
+$link-color:        #211e1c;
+$link-hover:        #fffdf2;
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
+
+
+/*********************
+UNITS
+*********************/
+$site-width: 1216px;
+$slider-max-width: 1600px;
+
+$margin: 1.5em;
+$marginhalf: (.5 * $margin);
+$marginquarter: (.25 * $margin);
+$margin2x: (2 * $margin);
+$margin3x: (3 * $margin);
+$margin4x: (4 * $margin);
+
+$footer-height: 100px;
+
+/*********************
+BREAKPOINTS
+*********************/
+$phone: 1em;
+$phone-landscape: 25em;
+$tablet-vertical:50em;
+$tablet:60em;
+$desktop: 80em;
+
+
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+$sans-serif:        "Source Code Pro", Courier, Helvetica, sans-serif;
+$serif:             "Courier", Cambria, Times New Roman, Times, serif;
+$titles:            "nimbus-sans", sans-serif;
+
+
+
+/*********************
+TRANISTION
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+@mixin hovers($time: .2s, $function: ease-in-out, $property: all ) {
+	transition: $property $time $function;
+}
+
+
+/*********************
+CENTERING
+*********************/
+
+@mixin absolute-center($z-index: 2) {
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $z-index;
+}
+
+/*********************
+HIGHLIGHT
+*********************/
+
+@mixin highlight($size: 1.6em) {
+    font-size: 1em;
+    letter-spacing: .29em;
+    line-height: 1;
+    text-transform: uppercase;
+    background: $black;
+    color: $white;
+    display:  block;
+    padding: .25em .125em .25em .25em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+      @include breakpoint($tablet, $no-query: '.no-mediaqueries') {
+        font-size: $size;
+        }// * BP
+
+
+}
+
+
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}

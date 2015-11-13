@@ -1,0 +1,36 @@
+/**********************************
+BREAKPOINTS
+**********************************/
+@import "breakpoint";
+
+$phone: 1em; /* 16px */
+$phone-landscape: 25em; /* 400px */
+$tablet: 48em; /* 768px */
+$tablet-landscape: 56em; /* 896px */
+$desktop: 71em; /* 1136px */
+
+
+
+/**********************************
+CUSTOM DASHBOARD ADJUSTMENTS
+**********************************/
+
+// Change the field names
+
+.sub_field[data-field_name="event"] .acf_wysiwyg iframe{
+  min-height: 40px;
+}
+
+@include breakpoint($tablet){
+	.field#acf-last_name{
+		width:78%;
+		float:left;
+	}
+	.field#acf-header_image{
+		width:19%;
+		float:right;
+	}
+	.field#acf-header_image + div{
+		clear:both;
+	}
+}

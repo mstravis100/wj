@@ -1,0 +1,43 @@
+// ANIMATIONS
+
+$duration: 1s;
+$duration-slow: 1.25s;
+
+.animated{
+	animation-fill-mode:both;
+	animation-duration: $duration;
+
+}// animated
+
+.animated.hinge {
+	animation-duration: $duration;
+}//animated.hinge
+
+.animated-slow {
+	animation-fill-mode:both;
+	animation-duration:$duration-slow;
+}// animated-slow
+
+
+@-webkit-keyframes fadeIn {
+	0% {opacity: 0;}	100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+.fadeIn {
+	animation-name: fadeIn;
+}

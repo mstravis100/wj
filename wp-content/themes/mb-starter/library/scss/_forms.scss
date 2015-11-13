@@ -1,0 +1,39 @@
+/******************************************************************
+FORM STYLES
+******************************************************************/
+
+[placeholder] {
+	color: $black;
+	}
+
+::-webkit-input-placeholder {
+	font-size: 1em;
+	color: $black;
+	}
+
+:-moz-placeholder { /* Firefox 18- */
+	font-size: 1em;
+	color: $black;
+	}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	font-size: 1em;
+	color: $black;
+	}
+
+:-ms-input-placeholder {
+	font-size: 1em;
+	color: $black;
+	}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.1s 0.1s ease-in-out;
+  opacity: 0;
+}
+
+.name-form:focus::-webkit-input-placeholder {
+  transition: text-indent 0.1s 0.1s ease-in-out;
+  text-indent: -100%;
+  opacity: 1;
+}
+
